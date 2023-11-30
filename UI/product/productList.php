@@ -1,12 +1,18 @@
 <?php
 include "function/productListFun.php";
+include "function/productDeleteFun.php";
 ?>
-
-<h5>Product List Page</h5>
-<a href="index.php?page=product-create">
-    <button type="button" class="btn btn-outline-primary">Product Create</button>
-</a><br><br>
-
+<br>
+<h5 class="text-center">Product List Page</h5>
+<div class="container">
+    <a href="index.php?page=" class="float-start">
+        <button type="button" class="btn btn-outline-primary">Main Page</button>
+    </a>
+    <a href="index.php?page=product-create" class="float-end">
+        <button type="button" class="btn btn-outline-primary">Product Create</button>
+    </a>
+</div>
+<br><br>
 <div class="container border border-dark p-5 rounded shadow-sm">
     <table class="table  border border-dark p-5">
         <thead>
@@ -15,7 +21,7 @@ include "function/productListFun.php";
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Description</th>
-                <th>Operation</th>
+                <th class="text-center">Operation</th>
             </tr>
         </thead>
         <tbody>
@@ -35,12 +41,20 @@ echo $product['price'];
 echo $product['description'];
     ?></td>
 
-                <td>
-                    <a href="index.php?page=product-edit&action=<?php echo $product['id'] ?>">
-                        <button type="button" class="btn btn-outline-primary">Edit</button>
-                    </a>
-                    <button type="button" class="btn btn-outline-primary">Delete</button>
-                </td>
+                <form action="" method="post">
+                    <td class="text-center">
+                        <a class="text-decoration-none"
+                            href="index.php?page=product-edit&action=<?php echo $product['id'] ?>">
+                            <button type="button" class="btn btn-outline-success px-5">Edit</button>
+                        </a>
+                        <input type="hidden" name="p_id" value="<?php echo $product['id'] ?>">
+                        <button type="submit" class="btn btn-outline-danger px-5" name="p_delete">
+                            Delete
+                        </button>
+                    </td>
+                </form>
+
+
             </tr>
             <?php
 }
