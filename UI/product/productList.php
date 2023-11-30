@@ -14,6 +14,7 @@
       <th scope="col">Name</th>
       <th scope="col">Price</th>
       <th scope="col">Description</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +33,11 @@
         <td><?php 
         echo $product['description'];
         ?></td>
-        </tr>
+        <a href="index.php?page=product_edit">
+        <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+        </a>
+        <td><button type="button" class="btn btn-outline-primary">Delete</button></td>
+      </tr>
     <?php
     }
     ?>
