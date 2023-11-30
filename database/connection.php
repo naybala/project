@@ -1,7 +1,6 @@
 <?php
-$connection = mysqli_connect("localhost","root","","samplepj");
+$connection = mysqli_connect("localhost", "root", "never", "samplepj");
 
-if(!$connection){
-    echo "Disconnect";
+if (!$connection) {
+    echo "DisConnect";
 }
-?>
